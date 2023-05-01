@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NanoSync Orçamentos</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script> <!-- Incluindo EmailJS SDK -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<video autoplay muted loop id="video-background">
+    <source src="assets/Futuristic%20HUD.mp4" type="video/mp4">
+</video>
+<body>
+<div class="container mt-5">
+    <div class="d-flex justify-content-center align-items-center">
+        <img src="assets/logo_128.png" alt="Logo">
+    </div>
+    <h2 class="text-center mb-5">NanoSync Orçamentos</h2>
+
+    <form id="contact-form">
+        <div class="form-group">
+            <label for="nome_completo">Nome Completo<span class="required">*</span></label>
+            <input type="text" class="form-control" placeholder="Seu nome completo" id="nome_completo" name="nome_completo" required>
+        </div>
+        <div class="form-group">
+            <label for="email">E-mail<span class="required">*</span></label>
+            <input type="email" class="form-control" placeholder="E-mail para contato" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="telefone">Telefone<span class="required">*</span></label>
+            <input type="tel" class="form-control" placeholder="Telefone para contato" id="telefone" name="telefone" required>
+        </div>
+        <div class="form-group">
+            <label for="descricao_solucao">Descrição do serviço solicitado<span class="required">*</span></label>
+            <textarea class="form-control" placeholder="Descreva o que você deseja detalhadamente, não seja breve!" id="descricao_solucao" name="descricao_solucao" rows="3" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="quem_indicou">Quem Indicou (Instagram, Telefone ou E-mail)</label>
+            <input type="text" placeholder="Caso houver alguma indicação, deixe aqui!" class="form-control" id="quem_indicou" name="quem_indicou">
+        </div>
+
+        <button type="submit" onclick="sendMail()" class="btn btn-primary">Enviar</button>
+    </form>
+    <br>
+    <span id="alert-enviou-orcamento" style="display: none;" class="text-danger">Você já enviou um orçamento hoje!</span>
+
+</div>
+</body>
+
+</html>
+
+<script type="text/javascript">
+    (function(){
+        emailjs.init("a5rbV4xMUmfpeQTh6");
+    })();
+</script>
+
+
+<script type="text/javascript">
+    function sendMail() {
+        const form = document.querySelector('form');
+        form.addEventListener('submit', (event) => {
+            if (localStorage.getItem('MAILED')) {
+                document.getElementById('alert-enviou-orcamento').style.display = 'block';
+                event.preventDefault();
+            } else {
+                localStorage.setItem('MAILED', 'YES')
+                emailjs.sendForm('service_qsyt7js', 'template_efs7zzr', '#contact-form')
+                    .then(function(response) {
+                        console.log('SUCCESS!', response.status, response.text);
+                    }, function(error) {
+                        console.log('FAILED...', error);
+                    });
+                form.reset();
+            }
+        });
+    }
+</script>

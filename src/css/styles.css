@@ -1,0 +1,90 @@
+body {
+    background-color: #1f1f1f;
+    color: #fff;
+    position: relative; /* para que o conteúdo fique acima do vídeo */
+    z-index: 1; /* para colocar o conteúdo da página acima do vídeo */
+}
+h2 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    padding: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+input[type="text"], input[type="email"], input[type="tel"], textarea  {
+    background-color: #292929 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    color: #fff !important;
+    padding: 10px 15px !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 16px !important;
+    letter-spacing: 1px !important;
+    margin-bottom: 20px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus, textarea:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.form-group small {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-style: italic;
+    color: #a9a9a9;
+    display: block;
+    margin-bottom: 10px;
+}
+
+button[type="submit"] {
+    background-color: #0099ff;
+    border: none;
+    border-radius: 0;
+    padding: 7px 30px;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #0066cc;
+}
+
+.required {
+    color: red;
+}
+
+#video-background {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    opacity: 0.1; /* opacidade do vídeo */
+    z-index: -1; /* para colocar o vídeo atrás do conteúdo da página */
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 20px;
+}
