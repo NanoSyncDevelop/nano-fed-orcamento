@@ -97,8 +97,8 @@ button[type="submit"]:hover {
     bottom: 0;
     min-width: 100%;
     min-height: 100%;
-    opacity: 0.1; /* opacidade do vídeo */
-    z-index: -1; /* para colocar o vídeo atrás do conteúdo da página */
+    opacity: 0.3;
+    z-index: -1;
 }
 
 .container {
