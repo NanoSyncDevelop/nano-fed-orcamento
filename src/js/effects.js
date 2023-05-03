@@ -1,3 +1,8 @@
+// Loading Components
+window.onload = function() {
+    $('#header-boilerplate').load('src/components/header.html');
+};
+
 window.addEventListener('scroll', function() {
     if (window.scrollY > 80) {
         if (window.screen.height < 900) {

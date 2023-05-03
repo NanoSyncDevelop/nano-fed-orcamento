@@ -10,51 +10,11 @@
     <script src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
     <script src="src/js/mail.js"></script>
     <script src="src/js/effects.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
     <link rel="stylesheet" href="src/css/styles.css">
 </head>
 
-<header>
-<!--    O código da header é temporário, após irá retornar de uma API e jogar como innerHTML para evitar boilerplate-->
-    <nav id="navbar" class="navbar bg-body-tertiary fixed-top">
-        <div class="container-fluid">
-            <div class="d-flex justify-content-center align-items-center">
-                <img src="src/assets/logo_128.png" height="36"/>
-                <a class="navbar-brand" style="padding-left: 10px;" href="#">NanoSync</a>
-            </div>
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body">
-                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">🏠 Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">💼 Sobre</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">🚧 Projetos</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                🛠 Ferramentas
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="https://budget.nanosync.dev/">➡ Orçamentos</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </nav>
-</header>
+<header id="header-boilerplate"></header>
 <body>
 <div id="video-container">
     <video autoplay muted loop id="video-background" playsinline>
@@ -102,5 +62,4 @@
     </div>
 </div>
 </body>
-
 </html>

@@ -2,8 +2,8 @@ body {
     background-color: #1f1f1f;
     color: #fff;
     padding-top: 50px;
-    position: relative; /* para que o conteúdo fique acima do vídeo */
-    z-index: 1; /* para colocar o conteúdo da página acima do vídeo */
+    position: relative;
+    z-index: 1;
 }
 
 .navbar {
