@@ -1,9 +1,20 @@
 body {
     background-color: #1f1f1f;
     color: #fff;
+    padding-top: 50px;
     position: relative; /* para que o conteúdo fique acima do vídeo */
     z-index: 1; /* para colocar o conteúdo da página acima do vídeo */
 }
+
+.navbar {
+    padding: 30px;
+    background-color: rgba(43, 48, 53, 0) !important;
+}
+
+.offcanvas {
+    max-width: 70%
+}
+
 h2 {
     font-family: 'Roboto', sans-serif;
     font-weight: bold;

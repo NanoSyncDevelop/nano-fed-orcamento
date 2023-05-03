@@ -18,7 +18,7 @@ function sendMail() {
                 .then(function(response) {
                     document.getElementById('alert-success-01').style.display = 'block';
                 }, function(error) {
-                    document.getElementById('alert-error-01').textContent = 'Ocorreu um erro desconhecido, tente novamente em breve!';
+                    document.getElementById('alert-error-01').textContent = 'Ocorreu um erro desconhecido, tente novamente em breve.';
                 });
             form.reset();
             event.preventDefault();
