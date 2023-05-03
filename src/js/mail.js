@@ -6,7 +6,7 @@ function sendMail() {
     const form = document.querySelector('form');
     form.addEventListener('submit', (event) => {
         if (localStorage.getItem('MAILED')) {
-            document.getElementById('alert-enviou-orcamento').style.display = 'block';
+            document.getElementById('alert-error-01').style.display = 'block';
             event.preventDefault();
         } else {
             localStorage.setItem('MAILED', 'YES')
@@ -17,6 +17,7 @@ function sendMail() {
                     console.log('FAILED...', error);
                 });
             form.reset();
+            document.getElementById('alert-success-01').style.display = 'block';
         }
     });
 }
