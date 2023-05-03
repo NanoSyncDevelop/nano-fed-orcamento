@@ -10,14 +10,18 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script> <!-- Incluindo EmailJS SDK -->
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="src/js/mail.js"></script>
     <link rel="stylesheet" href="src/css/styles.css">
 </head>
+
+<body>
+
 <div id="video-container">
     <video autoplay muted loop id="video-background">
-        <source src="src/assets/Futuristic%20HUD.mp4" type="video/mp4">
+        <source src="src/assets/background.mp4" type="video/mp4">
     </video>
 </div>
-<body>
+
 <div class="container mt-5">
     <div class="d-flex justify-content-center align-items-center">
         <img src="src/assets/logo_128.png" alt="Logo">
@@ -56,31 +60,3 @@
 </body>
 
 </html>
-
-<script type="text/javascript">
-    (function(){
-        emailjs.init("a5rbV4xMUmfpeQTh6");
-    })();
-</script>
-
-
-<script type="text/javascript">
-    function sendMail() {
-        const form = document.querySelector('form');
-        form.addEventListener('submit', (event) => {
-            if (localStorage.getItem('MAILED')) {
-                document.getElementById('alert-enviou-orcamento').style.display = 'block';
-                event.preventDefault();
-            } else {
-                localStorage.setItem('MAILED', 'YES')
-                emailjs.sendForm('service_qsyt7js', 'template_efs7zzr', '#contact-form')
-                    .then(function(response) {
-                        console.log('SUCCESS!', response.status, response.text);
-                    }, function(error) {
-                        console.log('FAILED...', error);
-                    });
-                form.reset();
-            }
-        });
-    }
-</script>
