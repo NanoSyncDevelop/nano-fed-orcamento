@@ -15,9 +15,9 @@ function sendMail() {
         } else {
             localStorage.setItem('MAILED', 'YES')
             emailjs.sendForm('service_qsyt7js', 'template_efs7zzr', '#contact-form')
-                .then(function(response) {
+                .then(function() {
                     document.getElementById('alert-success-01').style.display = 'block';
-                }, function(error) {
+                }, function() {
                     document.getElementById('alert-error-01').textContent = 'Ocorreu um erro desconhecido, tente novamente em breve.';
                 });
             form.reset();
